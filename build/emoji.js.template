@@ -14,6 +14,14 @@ function emoji(){}
 	emoji.img_set = 'apple';
 
 	/**
+	 * The height of the emoji.
+	 *
+	 * @memberof emoji
+	 * @type {string}
+	 */
+	emoji.height = '24px';
+
+	/**
 	 * Configuration details for different image sets. This includes a path to a directory containing the
 	 * individual images (`path`) and a URL to sprite sheets (`sheet`). All of these images can be found
 	 * in the [emoji-data repository]{@link https://github.com/iamcal/emoji-data}. Using a CDN for these
@@ -255,7 +263,7 @@ function emoji(){}
 				return '<span class="emoji emoji-sizer" style="background-image:url('+img+')"'+title+'>'+text+'</span>'+extra;
 			}
 		}
-		return '<img src="'+img+'" class="emoji" '+title+'/>'+extra;
+		return '<img src="'+img+'" width="' + emoji.height + '" style="vertical-align:middle" class="emoji" '+title+'/>'+extra;
 	};
 
 	// Initializes the text emoticon data
